@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { FitnessItems } from "../Context";
 
 const FitScreem = () => {
   const navigation = useNavigation();
@@ -9,7 +10,6 @@ const FitScreem = () => {
 
   const [index, setIndex] = useState(0);
 
-  console.log(excersises.length);
 
   const currentExcersise = excersises[index];
 
@@ -21,6 +21,10 @@ const FitScreem = () => {
   const skipToPrev = () => {
     setIndex(index - 1);
   };
+
+  // useContext============================================================
+
+  const {completed,setCompleted,minutes,setMinutes,calories,setCalories,workOut,setWorkOut} = useContext(FitnessItems)
 
   return (
     <View style={{ backgroundColor: "#fff", flex: 1 }}>
@@ -50,6 +54,8 @@ const FitScreem = () => {
               marginBottom: 50,
             }}
             onPress={() => {
+              setCompleted([])
+
               navigation.navigate("Home");
             }}
           >
@@ -76,7 +82,10 @@ const FitScreem = () => {
             }}
             onPress={() => {
               navigation.navigate("Rest");
-
+              setCompleted([...completed,currentExcersise.name])
+              setWorkOut(workOut +1)
+              setMinutes(minutes + 2.5)
+              setCalories(calories + 6.30)
               setTimeout(() => {
                 setIndex(index + 1);
               }, 2000);

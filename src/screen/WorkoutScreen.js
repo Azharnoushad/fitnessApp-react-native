@@ -6,18 +6,26 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import ItemSepratore from "../components/ItemSepratore";
+import { FitnessItems } from "../Context";
+import { Ionicons } from '@expo/vector-icons';
+
 
 const WorkoutScreen = () => {
+
+  const {completed,setCompleted} = useContext(FitnessItems)
   const { params } = useRoute();
 
   const { id, image, excersises, name } = params;
 
   const navigation = useNavigation();
+
+  
+  
   return (
     <ScrollView
       style={{
@@ -83,15 +91,22 @@ const WorkoutScreen = () => {
                   </Text>
                 </View>
               </View>
+              {
+                completed.includes(item.name) ? (<Ionicons name="checkmark-circle-sharp" size={24} color="green" style={{position:"absolute",right:30,top:40}}/>) : (null)
+              }
+                
             </Pressable>
           );
         })}
         <ItemSepratore height={45} />
         <Pressable
           style={{ justifyContent: "center", alignItems: "center" }}
-          onPress={() => navigation.navigate("Fit",{
-            excersises:excersises
-          })}
+          onPress={() => {
+            navigation.navigate("Fit",{
+              excersises:excersises
+            })
+            setCompleted([])
+          }}
         >
           <Text
             style={{

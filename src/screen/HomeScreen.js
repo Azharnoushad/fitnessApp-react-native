@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import FitnessCards from "../components/FitnessCards";
 import { StatusBar } from "expo-status-bar";
+import { FitnessItems } from "../Context";
 
 const HomeScreen = () => {
+  const {workOut,calories,minutes} = useContext(FitnessItems)
   return (
     <ScrollView >
       <StatusBar style="light" translucent={false} />
@@ -21,7 +23,7 @@ const HomeScreen = () => {
 
         <View style={styles.subContainer}>
           <View style={styles.subCalc}>
-            <Text style={styles.subContainerText}>0</Text>
+            <Text style={styles.subContainerText}>{workOut}</Text>
             <Text
               style={{
                 ...styles.subContainerText,
@@ -33,7 +35,7 @@ const HomeScreen = () => {
             </Text>
           </View>
           <View style={styles.subCalc}>
-            <Text style={styles.subContainerText}>0</Text>
+            <Text style={styles.subContainerText}>{calories}</Text>
             <Text
               style={{
                 ...styles.subContainerText,
@@ -45,7 +47,7 @@ const HomeScreen = () => {
             </Text>
           </View>
           <View style={styles.subCalc}>
-            <Text style={styles.subContainerText}>0</Text>
+            <Text style={styles.subContainerText}>{minutes}</Text>
             <Text
               style={{
                 ...styles.subContainerText,
