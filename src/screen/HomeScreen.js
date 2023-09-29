@@ -1,16 +1,18 @@
-import { StyleSheet, Text, View,  Image,ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import React from "react";
 import FitnessCards from "../components/FitnessCards";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = () => {
   return (
     <ScrollView >
+      <StatusBar style="light" translucent={false} />
       <View
         style={{
           backgroundColor: "#000000",
           padding: 10,
           width: "100%",
-          flex:1
+          flex: 1,
         }}
       >
         <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 18 }}>
@@ -68,7 +70,7 @@ const HomeScreen = () => {
             }}
           />
         </View>
-      <FitnessCards/>
+        <FitnessCards />
       </View>
     </ScrollView>
   );

@@ -16,7 +16,7 @@ export default [
       {
         id: "11",
         image:
-          "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Incline-Push-Up.gif",
+          "https://dailyburn.com/life/wp-content/uploads/2015/08/wall-push-up.gif",
         name: "INCLINE PUSH-UPS",
         sets: 10,
       },
@@ -110,14 +110,14 @@ export default [
       },
       {
         id: "71",
-        image: "https://thumbs.gfycat.com/CompleteZigzagFossa-max-1mb.gif",
+        image:
+          "https://s-media-cache-ak0.pinimg.com/originals/92/3d/b0/923db0d91c116bf6a0364c10a75bc860.gif",
         name: "TRICEP DIPS",
         sets: 10,
       },
       {
         id: "72",
-        image:
-          "https://thumbs.gfycat.com/MisguidedAridAlaskanmalamute-max-1mb.gif",
+        image: "https://dungcutheduc.vn/images/diamond-push-up.gif",
         name: "DIAMOND_PUSHUP",
         sets: 10,
       },
@@ -173,14 +173,15 @@ export default [
       },
       {
         id: "22",
-        image: "https://thumbs.gfycat.com/TheseRigidBorer-size_restricted.gif",
+        image:
+          "https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/326/326949/a-gif-of-side-bends.gif?w=1155&h=840",
         name: "SHOULDER STRETCH",
         sets: 5,
       },
       {
         id: "23",
         image:
-          "https://thumbs.gfycat.com/AlertAfraidAldabratortoise-max-1mb.gif",
+          "https://womanhappiness.ru/wp-content/uploads/2020/11/content_cobra_yoga_pose.gif",
         name: "COBRA STRETCH",
         sets: 4,
       },
